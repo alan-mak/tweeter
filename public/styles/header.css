@@ -1,0 +1,20 @@
+header {
+  height: 400px;
+  width: 100%;
+  background-color: #ffff96;
+  background-image: url("https://www.transparenttextures.com/patterns/binding-light.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
+header div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header div h2 {
+  color: #000000;
+  font-family: "Oxygen";
+  display: flex;
+  align-items: center;
+}
