@@ -25,8 +25,11 @@
   <!-- Header CSS -->
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
 
-  <!-- Header CSS -->
+  <!-- New Tweet CSS -->
   <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+
+  <!-- Existing Tweet CSS -->
+  <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -40,7 +43,10 @@
   <!-- Top nav bar (fixed) -->
   <nav>
     <span>Tweeter</span>
-    <div><div>A New Tweet</div><div class="arrow">&#8659;</div></div>
+    <div>
+      <div>A New Tweet</div>
+      <div class="arrow">&#8659;</div>
+    </div>
   </nav>
   <header>
     <div>
@@ -64,10 +70,28 @@
         </div>
       </form>
     </section>
-    <p>ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-      aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-    </p>
+    <article class="tweet">
+      <header>
+        <div>
+        <img src="https://i.imgur.com/73hZDYK.png">
+        <h3>Fake Name</h3>
+      </div>
+          <p>@fakeyfake</p>
+      </header>
+      <p class="content">blah blah</p>
+      <footer>
+        <time>Some time</time>
+        <div>
+          <!-- Heart -->
+          <span>&#9829;</span>
+          <!-- Flag -->
+          <span>&#9872;</span> 
+          <!-- Comment -->
+          <span>&#8644;</span>
+        </div>
+      </footer>
+    </article>
+
   </main>
   <!-- Add Counter JS -->
   <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
