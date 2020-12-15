@@ -1,7 +1,7 @@
-form {
+main section form {
   font-family: "Fira Sans";
 }
-textarea {
+main section form textarea {
   overflow: hidden;
   resize: none;
   width: 100%;
@@ -13,14 +13,14 @@ textarea {
   outline: none;
 }
 
-div {
+main section form div {
   display: flex;
   justify-content: space-between;
   margin: 0.2em 0;
   font-family: "Bungee";
 }
 
-div button {
+main section form div button {
   background-color: #4056A1;
   color: #ffffff
 }
