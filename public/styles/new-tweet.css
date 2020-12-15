@@ -1,0 +1,26 @@
+form {
+  font-family: "Fira Sans";
+}
+textarea {
+  overflow: hidden;
+  resize: none;
+  width: 100%;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom-width: thick;
+  background-color: #f4f1ec;
+  outline: none;
+}
+
+div {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.2em 0;
+  font-family: "Bungee";
+}
+
+div button {
+  background-color: #4056A1;
+  color: #ffffff
+}
