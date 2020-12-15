@@ -5,10 +5,32 @@ nav {
   background-color: #4056A1;
   color: #ffffff;
   padding: 1.5em;
-  font-family: "Oxygen";
+  font-family: "Fira Sans";
+  display: flex;
+  justify-content: space-between;
 }
+
+nav div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+nav div.arrow {
+  display: flex;
+  align-items: center;
+}
+
 nav span {
   box-sizing: border-box;
   font-size: 36px;
   font-family: "Bungee";
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
 }
+
+/* nav div div2 {
+  display: flex;
+  justify-content: center;
+} */
