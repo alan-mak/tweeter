@@ -24,5 +24,11 @@ article.tweet p.content {
 article.tweet footer {
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: space-between;
+  font-size: 15px;
+}
+
+article.tweet footer div {
+  font-size: 24px;
 }
