@@ -24,3 +24,7 @@ main section form div button {
   background-color: #4056A1;
   color: #ffffff
 }
+
+.negativeCounter {
+  color: red;
+}
