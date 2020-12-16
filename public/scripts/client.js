@@ -30,21 +30,33 @@ const data = [
 ]
 
 $(document).ready(function () {
-  const getTweets = () => {
-    // Get tweets from URL
-    const url = 'http://localhost:8080/tweets';
 
-    //Create AJAX request
+  // // Gets Tweets From server
+  // const getTweets = () => {
+  //   // Get tweets from URL
+  //   const url = 'http://localhost:8080/tweets';
+
+  //   //Create AJAX request
+  //   $.ajax({
+  //     method: 'GET',
+  //     url: url,
+  //   })
+  //     .then((result) => {
+  //       renderTweets(result);
+  //     })
+  //     .catch((err) => console.log(err));
+  // }
+
+  // Post Tweets to server
+  const postTweets = (data) => {
     $.ajax({
-      method: 'GET',
-      url: url,
-    })
-      .then((result) => {
-        renderTweets(result);
-      })
-      .catch((err) => console.log(err));
+      method: "POST",
+      url: "http://localhost:8080/tweets",
+      data: data
+    });
   }
 
+  // Creates the Tweet Box on Page
   const renderTweets = function (tweets) {
     // loops through tweets
     for (let tweet of tweets) {
@@ -56,6 +68,7 @@ $(document).ready(function () {
     // takes return value and appends it to the tweets container
   }
 
+  // Takes all the element from the database to use in tweet
   const createTweetElement = function (tweet) {
     let $tweet = /* Your code for creating the tweet element */
       `<article class="tweet">
@@ -82,6 +95,15 @@ $(document).ready(function () {
 
     return $tweet;
   }
+
+  // Form Submission
+  $('#newTweet').on('submit', function (event) {
+    // Stop the form from being submitted
+    event.preventDefault();
+    // target the input field -> children
+    const $newTweetBox = $(this).children('#tweet-text').serialize();
+    postTweets($newTweetBox);
+  });
 
   renderTweets(data);
 });
