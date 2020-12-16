@@ -12,22 +12,25 @@ article.tweet {
   border-style: solid;
 }
 
-article.tweet header {
+article.tweet .articleHead {
   display: flex;
   height: auto;
   flex-direction: row;
   justify-content: space-between;
   background-color: #f4f1ec;
   background-image: none;
+  margin-top: 0%;
 }
 
-article.tweet header p {
+article.tweet .articleHead p {
   color: transparent;
 }
 
 article.tweet p.content {
   border-bottom-style: solid;
-  color: black;
+  display: flex;
+  justify-content: end;
+  margin: 1em;
 }
 
 article.tweet footer {
