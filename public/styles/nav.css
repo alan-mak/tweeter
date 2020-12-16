@@ -8,6 +8,8 @@ nav {
   font-family: "Fira Sans";
   display: flex;
   justify-content: space-between;
+  top: 0;
+  position: fixed;
 }
 
 nav div {
