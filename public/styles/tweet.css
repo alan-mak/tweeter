@@ -1,3 +1,11 @@
+article.tweet:hover {
+  box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: all 200ms ease-out;
+}
+article.tweet:hover header p {
+  color: skyblue;
+}
+
 article.tweet {
   margin: 1em;
   font-family: "Oxygen";
@@ -14,11 +22,12 @@ article.tweet header {
 }
 
 article.tweet header p {
-  color: skyblue;
+  color: transparent;
 }
 
 article.tweet p.content {
   border-bottom-style: solid;
+  color: black;
 }
 
 article.tweet footer {
