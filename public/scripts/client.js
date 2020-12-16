@@ -75,9 +75,16 @@ $(document).ready(function () {
   $('#newTweet').on('submit', function (event) {
     // Stop the form from being submitted
     event.preventDefault();
+    let $tweetText = $(this).children('#tweet-text');
+    if ($tweetText.val().length < 1) {
+      alert("ERROR: No Message Found")
+    } else if ($tweetText.val().length > 140) {
+      alert("ERROR: Over 140 Characters")
+    } else {
     // target the input field -> children
-    const $newTweetBox = $(this).children('#tweet-text').serialize();
+    const $newTweetBox = $tweetText.serialize();
     postTweets($newTweetBox);
+    }
   });
   loadTweets();
 });
