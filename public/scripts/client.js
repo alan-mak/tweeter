@@ -16,6 +16,10 @@ const loadTweets = () => {
     url: "http://localhost:8080/tweets",
   })
     .then((result) => {
+      $("#tweetContainer").empty();
+      $(".counter").text("140");
+      $("form").trigger("reset");
+
       renderTweets(result);
     })
     .catch((err) => console.log("Error", err));
@@ -29,9 +33,6 @@ const postTweets = (data) => {
     data: data
   }).then(() => {
     // Used to update tweet list everytime submit is pressed
-    $("#tweetContainer").empty();
-    $(".counter").text("140");
-    $("form").trigger("reset");
     loadTweets();
   });
 }
