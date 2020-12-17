@@ -51,6 +51,8 @@ const renderTweets = function (tweets) {
 
 // Takes all the element from the database to use in tweet
 const createTweetElement = function (tweet) {
+  createdAt = new Date(parseInt(`${tweet.created_at}`))
+  
   let $tweet = /* Your code for creating the tweet element */
     `<article class="tweet">
       <header class="articleHead">
@@ -62,7 +64,7 @@ const createTweetElement = function (tweet) {
       </header>
       <p class="content">${escape(tweet.content.text)}</p>
       <footer>
-        <time>${tweet.created_at}</time>
+        <time>${createdAt}</time>
         <div>
           <!-- Heart -->
           <span><i class="fas fa-heart"></i></span>
