@@ -5,48 +5,50 @@
  */
 
 $(document).ready(function () {
+  loadTweets;
+});
 
-  // Gets Tweets From server
-  const loadTweets = () => {
-    //Create AJAX request
-    $.ajax({
-      method: 'GET',
-      url: "http://localhost:8080/tweets",
+// Gets Tweets From server
+const loadTweets = () => {
+  //Create AJAX request
+  $.ajax({
+    method: 'GET',
+    url: "http://localhost:8080/tweets",
+  })
+    .then((result) => {
+      renderTweets(result);
     })
-      .then((result) => {
-        renderTweets(result);
-      })
-      .catch((err) => console.log("Error", err));
-  }
+    .catch((err) => console.log("Error", err));
+}
 
-  // Post Tweets to server
-  const postTweets = (data) => {
-    $.ajax({
-      method: "POST",
-      url: "http://localhost:8080/tweets",
-      data: data
-    }).then(() => {
-      // Used to update tweet list everytime submit is pressed
-      $('.tweet').replaceWith(loadTweets())
-    });
-  }
+// Post Tweets to server
+const postTweets = (data) => {
+  $.ajax({
+    method: "POST",
+    url: "http://localhost:8080/tweets",
+    data: data
+  }).then(() => {
+    // Used to update tweet list everytime submit is pressed
+    $('.tweet').replaceWith(loadTweets())
+  });
+}
 
-  // Creates the Tweet Box on Page
-  const renderTweets = function (tweets) {
-    // loops through tweets
-    for (let tweet of tweets) {
-      // calls createTweetElement for each tweet
-      const tweetElement = createTweetElement(tweet);
-      // using JQuery added new posts
-      $('#tweetContainer').prepend(tweetElement);
-    }
-    // takes return value and appends it to the tweets container
+// Creates the Tweet Box on Page
+const renderTweets = function (tweets) {
+  // loops through tweets
+  for (let tweet of tweets) {
+    // calls createTweetElement for each tweet
+    const tweetElement = createTweetElement(tweet);
+    // using JQuery added new posts
+    $('#tweetContainer').prepend(tweetElement);
   }
+  // takes return value and appends it to the tweets container
+}
 
-  // Takes all the element from the database to use in tweet
-  const createTweetElement = function (tweet) {
-    let $tweet = /* Your code for creating the tweet element */
-      `<article class="tweet">
+// Takes all the element from the database to use in tweet
+const createTweetElement = function (tweet) {
+  let $tweet = /* Your code for creating the tweet element */
+    `<article class="tweet">
       <header class="articleHead">
         <div>
           <img src="${tweet.user.avatars}">
@@ -68,35 +70,35 @@ $(document).ready(function () {
       </footer>
     </article>`
 
-    return $tweet;
-  }
+  return $tweet;
+}
 
-  // Form Submission
-  $('#newTweet').on('submit', function (event) {
-    // Stop the form from being submitted
-    event.preventDefault();
-    let $tweetText = $(this).children('#tweet-text');
-    if ($tweetText.val().length < 1) {
-      $(".noCharacter").slideDown();
-      $(".overCharacter").slideUp();
-    } else if ($tweetText.val().length > 140) {
-      $(".overCharacter").slideDown();
-      $(".noCharacter").slideUp();
-    } else {
-      $(".noCharacter").slideUp();
-      $(".overCharacter").slideUp();
-      const $newTweetBox = $tweetText.serialize();
-      postTweets($newTweetBox);
-    }
-  });
-
-  // Escape Function
-  const escape = function (str) {
-    let div = document.createElement('div');
-    div.appendChild(document.createTextNode(str));
-    return div.innerHTML;
+// Form Submission
+$('#newTweet').on('submit', function (event) {
+  // Stop the form from being submitted
+  event.preventDefault();
+  let $tweetText = $(this).children('#tweet-text');
+  if ($tweetText.val().length < 1) {
+    $(".noCharacter").slideDown();
+    $(".overCharacter").slideUp();
+  } else if ($tweetText.val().length > 140) {
+    $(".overCharacter").slideDown();
+    $(".noCharacter").slideUp();
+  } else {
+    $(".noCharacter").slideUp();
+    $(".overCharacter").slideUp();
+    const $newTweetBox = $tweetText.serialize();
+    postTweets($newTweetBox);
   }
-  loadTweets();
-  $(".noCharacter").hide();
-  $(".overCharacter").hide();
 });
+
+// Escape Function
+const escape = function (str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
+loadTweets();
+$(".noCharacter").hide();
+$(".overCharacter").hide();
+
