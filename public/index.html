@@ -67,6 +67,10 @@
   <!-- Page-specific (main) content here -->
   <main class="container">
     <section class="new-tweet">
+      <div class="errorMessage">
+        <p class="overCharacter"><i class="fas fa-exclamation-triangle"></i>ERROR: Over 140 characters<i class="fas fa-exclamation-triangle"></i></p>
+        <p class="noCharacter"><i class="fas fa-exclamation-triangle"></i>ERROR: No Message Found<i class="fas fa-exclamation-triangle"></i></p>
+      </div>
       <h2>Compose Tweet</h2>
       <form method="POST" action="/tweets/" id="newTweet">
         <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>

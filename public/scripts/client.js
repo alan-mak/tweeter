@@ -77,21 +77,26 @@ $(document).ready(function () {
     event.preventDefault();
     let $tweetText = $(this).children('#tweet-text');
     if ($tweetText.val().length < 1) {
-      alert("ERROR: No Message Found")
+      $(".noCharacter").slideDown();
+      $(".overCharacter").slideUp();
     } else if ($tweetText.val().length > 140) {
-      alert("ERROR: Over 140 Characters")
+      $(".overCharacter").slideDown();
+      $(".noCharacter").slideUp();
     } else {
-    // target the input field -> children
-    const $newTweetBox = $tweetText.serialize();
-    postTweets($newTweetBox);
+      $(".noCharacter").slideUp();
+      $(".overCharacter").slideUp();
+      const $newTweetBox = $tweetText.serialize();
+      postTweets($newTweetBox);
     }
   });
 
   // Escape Function
-  const escape =  function(str) {
+  const escape = function (str) {
     let div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   }
   loadTweets();
+  $(".noCharacter").hide();
+  $(".overCharacter").hide();
 });

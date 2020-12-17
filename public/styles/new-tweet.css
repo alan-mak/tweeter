@@ -1,6 +1,7 @@
 main section form {
   font-family: "Fira Sans";
 }
+
 main section form textarea {
   overflow: hidden;
   resize: none;
@@ -11,6 +12,13 @@ main section form textarea {
   border-bottom-width: thick;
   background-color: #f4f1ec;
   outline: none;
+}
+
+main section div.errorMessage {
+  text-align: center;
+  background-color: yellow;
+  font-family: 'Bungee';
+  font-size: 36px;
 }
 
 main section form div {
