@@ -31,6 +31,7 @@ article.tweet p.content {
   display: flex;
   justify-content: end;
   margin: 1em;
+  word-break: break-all;
 }
 
 article.tweet footer {
