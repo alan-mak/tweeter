@@ -54,7 +54,7 @@ $(document).ready(function () {
         </div>
         <p>${tweet.user.handle}</p>
       </header>
-      <p class="content">${tweet.content.text}</p>
+      <p class="content">${escape(tweet.content.text)}</p>
       <footer>
         <time>${tweet.created_at}</time>
         <div>
@@ -86,5 +86,12 @@ $(document).ready(function () {
     postTweets($newTweetBox);
     }
   });
+
+  // Escape Function
+  const escape =  function(str) {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
   loadTweets();
 });
