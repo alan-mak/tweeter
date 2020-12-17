@@ -29,7 +29,10 @@ const postTweets = (data) => {
     data: data
   }).then(() => {
     // Used to update tweet list everytime submit is pressed
-    $('.tweet').replaceWith(loadTweets())
+    $("#tweetContainer").empty();
+    $(".counter").text("140");
+    $("form").trigger("reset");
+    loadTweets();
   });
 }
 
