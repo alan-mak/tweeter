@@ -8,23 +8,23 @@ This project served to build upon HTML, CSS, JS, jQuery and AJAX front-end skill
 
 A simple and Vancouver Canucks themed website.
 
-!["Main Page"](url)
+!["Main Page"](https://github.com/alan-mak/tweeter/blob/master/docs/mainPage.png)
 
 Supports utilization on different screen sizes without distortion.
 
-!["Phone Version"](url)
+!["Phone Version"](https://github.com/alan-mak/tweeter/blob/master/docs/iPhone.PNG)
 
 Safe agains cross-site scripting.
 
-!["Secure"](url)
+!["Secure"](https://github.com/alan-mak/tweeter/blob/master/docs/safe.png)
 
 Stylistic changes when hovering over a Tweet to stand out and reduce visual clutter.
 
-!["Hover"](url)
+!["Hover"](https://github.com/alan-mak/tweeter/blob/master/docs/focus.png)
 
 Character count introduced so your message will be understood by observers
 
-!["Character Count"](url)
+!["Character Count"](urhttps://github.com/alan-mak/tweeter/blob/master/docs/error.pngl)
 
 ## Getting Started
 
