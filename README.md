@@ -24,7 +24,7 @@ Stylistic changes when hovering over a Tweet to stand out and reduce visual clut
 
 Character count introduced so your message will be understood by observers
 
-!["Character Count"](urhttps://github.com/alan-mak/tweeter/blob/master/docs/error.pngl)
+!["Character Count"](urhttps://github.com/alan-mak/tweeter/blob/master/docs/error.png)
 
 ## Getting Started
 
