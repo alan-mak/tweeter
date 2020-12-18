@@ -88,7 +88,7 @@ $('#newTweet').on('submit', function (event) {
   // Stop the form from being submitted
   event.preventDefault();
   let $tweetText = $(this).children('#tweet-text');
-  if ($tweetText.val().length < 1) {
+  if ($tweetText.val().length <= 0) {
     $(".noCharacter").slideDown();
     $(".overCharacter").slideUp();
   } else if ($tweetText.val().length > 140) {
