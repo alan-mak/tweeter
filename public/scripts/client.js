@@ -4,7 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-$(document).ready(function () {
+$(document).ready(function() {
   loadTweets;
 });
 
@@ -23,7 +23,7 @@ const loadTweets = () => {
       renderTweets(result);
     })
     .catch((err) => console.log("Error", err));
-}
+};
 
 // Post Tweets to server
 const postTweets = (data) => {
@@ -35,10 +35,10 @@ const postTweets = (data) => {
     // Used to update tweet list everytime submit is pressed
     loadTweets();
   });
-}
+};
 
 // Creates the Tweet Box on Page
-const renderTweets = function (tweets) {
+const renderTweets = function(tweets) {
   // loops through tweets
   for (let tweet of tweets) {
     // calls createTweetElement for each tweet
@@ -47,11 +47,11 @@ const renderTweets = function (tweets) {
     $('#tweetContainer').prepend(tweetElement);
   }
   // takes return value and appends it to the tweets container
-}
+};
 
 // Takes all the element from the database to use in tweet
-const createTweetElement = function (tweet) {
-  createdAt = new Date(parseInt(`${tweet.created_at}`))
+const createTweetElement = function(tweet) {
+  createdAt = new Date(parseInt(`${tweet.created_at}`));
 
   let $tweet = /* Your code for creating the tweet element */
     `<article class="tweet">
@@ -78,13 +78,13 @@ const createTweetElement = function (tweet) {
           </div>
         </footer>
       </div>
-    </article>`
+    </article>`;
 
   return $tweet;
-}
+};
 
 // Form Submission
-$('#newTweet').on('submit', function (event) {
+$('#newTweet').on('submit', function(event) {
   // Stop the form from being submitted
   event.preventDefault();
   let $tweetText = $(this).children('#tweet-text');
@@ -103,11 +103,12 @@ $('#newTweet').on('submit', function (event) {
 });
 
 // Escape Function
-const escape = function (str) {
+const escape = function(str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
-}
+};
+
 loadTweets();
 $(".noCharacter").hide();
 $(".overCharacter").hide();

@@ -1,17 +1,15 @@
 $(document).ready(function() {
   // --- our code goes here ---
   const $textarea = $('textarea');
-  $textarea.on("keyup", function () {
-    let counter = $(this).siblings("div").children(".counter")
+  $textarea.on("keyup", function() {
+    let counter = $(this).siblings("div").children(".counter");
 
-    counter.text(140 - $(this).val().length)
+    counter.text(140 - $(this).val().length);
     if ($(this).val().length > 140) {
       
-      counter.addClass("negativeCounter")
+      counter.addClass("negativeCounter");
     } else {
-      counter.removeClass("negativeCounter")
+      counter.removeClass("negativeCounter");
     }
-  })
+  });
 });
-
-// this.val set as variable
