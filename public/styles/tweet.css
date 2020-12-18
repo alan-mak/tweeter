@@ -2,7 +2,8 @@ article.tweet:hover {
   box-shadow: 0 0 0 10px #99999A;
   transition: all 200ms ease-out;
 }
-article.tweet:hover header p {
+/* Hovering For Icons */
+article.tweet:hover div footer div {
   color: #041C2C;
 }
 
@@ -23,7 +24,7 @@ article.tweet .articleHead {
 }
 
 article.tweet .articleHead p {
-  color: transparent;
+  color: #041C2C;
 }
 
 article.tweet div p.content {
@@ -44,6 +45,7 @@ article.tweet div footer {
 }
 
 article.tweet div footer div {
+  color: transparent;
   font-size: 24px;
 }
 
@@ -54,40 +56,3 @@ article.tweet div footer div {
   } 
 }
 
-@media only screen and (min-width: 1025px) {
-  /* Write CSS rules that target Tablets screen sizes downwards - including smartphones */
-  article.tweet {
-    padding-block: 0.5em;
-    display: flex;
-  }
-
-  article.tweet .articleHead {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  article.tweet .articleHead div {
-    margin: 0;
-  }
-
-  article.tweet:hover header p {
-    margin: 0;
-  }
-
-  article.tweet div {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: space-between;
-  }
-
-  article.tweet div footer {
-    display: inline;
-  }
-
-  article.tweet div footer div {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-  }
-}

@@ -36,10 +36,3 @@ main section form div button {
 .negativeCounter {
   color: red;
 }
-
-@media only screen and (min-width: 1025px) {
-  main section.new-tweet {
-    padding-left: 1em;
-    padding-right: 1em;
-  }
-}

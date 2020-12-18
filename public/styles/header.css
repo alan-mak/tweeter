@@ -33,18 +33,3 @@ body header div {
     display: none;
   }
 }
-
-@media only screen and (min-width: 1025px) {
-  /* Write CSS rules that target Tablets screen sizes downwards - including smartphones */
-  header {
-    width: 30%;
-    height: 25%;
-    float: left;
-    margin-top: 6em;
-    border-radius: 5%;
-    background-color: #00205B;
-  }
-  header div h2 {
-    color: #ffffff;
-  }
-}

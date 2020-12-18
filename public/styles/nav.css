@@ -18,6 +18,12 @@
   flex-direction: column;
 }
 
+.navBar div #newTweetButton {
+  background-color: #00205B;
+  color: #ffffff;
+  font-family: "Fira Sans";
+}
+
 .navBar div.arrow {
   display: flex;
   align-items: center;
@@ -35,11 +41,5 @@
 @media only screen and (max-width: 419px) {
   .navBar span {
     font-size: 1em;
-  }
-}
-
-@media only screen and (min-width: 1025px) {
-  .navBar span{
-    font-size: 3em;
   }
 }
