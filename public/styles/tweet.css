@@ -1,9 +1,9 @@
 article.tweet:hover {
-  box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 0 10px #99999A;
   transition: all 200ms ease-out;
 }
 article.tweet:hover header p {
-  color: skyblue;
+  color: #041C2C;
 }
 
 article.tweet {
@@ -26,22 +26,68 @@ article.tweet .articleHead p {
   color: transparent;
 }
 
-article.tweet p.content {
+article.tweet div p.content {
   border-bottom-style: solid;
   display: flex;
   justify-content: end;
+  font-size: 2em;
   margin: 1em;
-  word-break: break-all;
+  word-break: break-word;
 }
 
-article.tweet footer {
+article.tweet div footer {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  font-size: 15px;
+  font-size: 0.7em;
 }
 
-article.tweet footer div {
+article.tweet div footer div {
   font-size: 24px;
+}
+
+@media only screen and (max-width: 419px) {
+  article.tweet div footer div {
+    display: flex;
+    flex-direction: column;
+  } 
+}
+
+@media only screen and (min-width: 1025px) {
+  /* Write CSS rules that target Tablets screen sizes downwards - including smartphones */
+  article.tweet {
+    padding-block: 0.5em;
+    display: flex;
+  }
+
+  article.tweet .articleHead {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  article.tweet .articleHead div {
+    margin: 0;
+  }
+
+  article.tweet:hover header p {
+    margin: 0;
+  }
+
+  article.tweet div {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+  }
+
+  article.tweet div footer {
+    display: inline;
+  }
+
+  article.tweet div footer div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
 }

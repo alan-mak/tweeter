@@ -52,7 +52,7 @@ const renderTweets = function (tweets) {
 // Takes all the element from the database to use in tweet
 const createTweetElement = function (tweet) {
   createdAt = new Date(parseInt(`${tweet.created_at}`))
-  
+
   let $tweet = /* Your code for creating the tweet element */
     `<article class="tweet">
       <header class="articleHead">
@@ -60,20 +60,24 @@ const createTweetElement = function (tweet) {
           <img src="${tweet.user.avatars}">
           <h3>${tweet.user.name}</h3>
         </div>
-        <p>${tweet.user.handle}</p>
-      </header>
-      <p class="content">${escape(tweet.content.text)}</p>
-      <footer>
-        <time>${createdAt}</time>
         <div>
-          <!-- Heart -->
-          <span><i class="fas fa-heart"></i></span>
-          <!-- Flag -->
-          <span><i class="fas fa-flag"></i></span>
-          <!-- Comment -->
-          <span><i class="fas fa-retweet"></i></span>
+          <p>${tweet.user.handle}</p>
         </div>
-      </footer>
+      </header>
+      <div>
+        <p class="content">${escape(tweet.content.text)}</p>
+        <footer>
+          <time>${createdAt}</time>
+          <div>
+            <!-- Heart -->
+            <span><i class="fas fa-heart"></i></span>
+            <!-- Flag -->
+            <span><i class="fas fa-flag"></i></span>
+            <!-- Comment -->
+            <span><i class="fas fa-retweet"></i></span>
+          </div>
+        </footer>
+      </div>
     </article>`
 
   return $tweet;

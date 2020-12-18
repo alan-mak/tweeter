@@ -29,10 +29,17 @@ main section form div {
 }
 
 main section form div button {
-  background-color: #4056A1;
+  background-color: #00205B;
   color: #ffffff
 }
 
 .negativeCounter {
   color: red;
+}
+
+@media only screen and (min-width: 1025px) {
+  main section.new-tweet {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
 }
